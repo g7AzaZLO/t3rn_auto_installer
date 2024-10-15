@@ -10,7 +10,7 @@ export LOG_LEVEL="debug"
 export LOG_PRETTY="false"
 export EXECUTOR_PROCESS_ORDERS="true"
 export EXECUTOR_PROCESS_CLAIMS="true"
-echo "Введите ваш приватный ключ:"
+echo "Введите ваш приватный ключ"
 read -s -p "Приватный ключ: " PRIVATE_KEY_LOCAL
 echo
 export PRIVATE_KEY_LOCAL="$PRIVATE_KEY_LOCAL"
@@ -18,7 +18,6 @@ export ENABLED_NETWORKS="arbitrum-sepolia,base-sepolia,optimism-sepolia,l1rn"
 echo "Запуск узла в screen сессии..."
 cd /root/executor/executor/bin/ || exit 1
 screen -dmS executor_session bash -c './executor; exec bash'
-echo "Установка и запуск завершены. Узел запущен в screen-сессии с именем 'executor_session'."
 echo "Установка и запуск завершены. Узел запущен в screen-сессии с именем 'executor_session'."
 echo -e "\033[1;36m"
 echo -e "████╗░██████╗░███████╗████╗  ░█████╗░███████╗░█████╗░███████╗██╗░░░░░░█████╗░"
