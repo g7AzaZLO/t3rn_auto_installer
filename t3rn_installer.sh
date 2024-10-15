@@ -3,7 +3,7 @@ echo "Загрузка исполняемого файла..."
 wget https://github.com/t3rn/executor-release/releases/download/v0.21.7/executor-linux-v0.21.7.tar.gz -O executor-linux.tar.gz
 echo "Распаковка архива..."
 tar -xzvf executor-linux.tar.gz
-cd executor || exit
+cd executor || exit 1
 echo "Настройка параметров среды..."
 export NODE_ENV="testnet"
 export LOG_LEVEL="debug"
@@ -11,12 +11,14 @@ export LOG_PRETTY="false"
 export EXECUTOR_PROCESS_ORDERS="true"
 export EXECUTOR_PROCESS_CLAIMS="true"
 echo "Введите ваш приватный ключ:"
-read -r PRIVATE_KEY_LOCAL
+read -s -p "Приватный ключ: " PRIVATE_KEY_LOCAL
+echo
 export PRIVATE_KEY_LOCAL="$PRIVATE_KEY_LOCAL"
 export ENABLED_NETWORKS="arbitrum-sepolia,base-sepolia,optimism-sepolia,l1rn"
 echo "Запуск узла в screen сессии..."
-cd /root/executor/executor/bin/ || exit
+cd /root/executor/executor/bin/ || exit 1
 screen -dmS executor_session bash -c './executor; exec bash'
+echo "Установка и запуск завершены. Узел запущен в screen-сессии с именем 'executor_session'."
 echo "Установка и запуск завершены. Узел запущен в screen-сессии с именем 'executor_session'."
 echo -e "\033[1;36m"
 echo -e "████╗░██████╗░███████╗████╗  ░█████╗░███████╗░█████╗░███████╗██╗░░░░░░█████╗░"
