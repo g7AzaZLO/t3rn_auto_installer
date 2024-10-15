@@ -17,8 +17,8 @@ export PRIVATE_KEY_LOCAL="$PRIVATE_KEY_LOCAL"
 export ENABLED_NETWORKS="arbitrum-sepolia,base-sepolia,optimism-sepolia,l1rn"
 echo "Запуск узла в screen сессии..."
 cd /root/executor/executor/bin/ || exit 1
-screen -dmS executor_session bash -c './executor; exec bash'
-echo "Установка и запуск завершены. Узел запущен в screen-сессии с именем 'executor_session'."
+screen -dmS t3rn_node bash -c './executor; exec bash'
+echo "Установка и запуск завершены. Узел запущен в screen-сессии с именем 't3rn_node'."
 echo -e "\033[1;36m"
 echo -e "████╗░██████╗░███████╗████╗  ░█████╗░███████╗░█████╗░███████╗██╗░░░░░░█████╗░"
 echo -e "██╔═╝██╔════╝░╚════██║╚═██║  ██╔══██╗╚════██║██╔══██╗╚════██║██║░░░░░██╔══██╗"
@@ -31,4 +31,4 @@ echo
 echo -e "\033[1;32mTelegram community: \033[5;31mhttps://t.me/g7monitor\033[0m"
 echo -e "\033[0m"
 echo
-echo "Установка завершена. Для просмотра логов зайдите в скрин сессию: screen -r nexus"
+echo "Установка завершена. Для просмотра логов зайдите в скрин сессию: screen -r t3rn_node"
