@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Загрузка исполняемого файла..."
-wget https://github.com/t3rn/executor-release/releases/download/v0.21.7/executor-linux-v0.21.7.tar.gz -O executor-linux.tar.gz
+wget https://github.com/t3rn/executor-release/releases/download/v0.21.7/executor-linux-v0.21.9.tar.gz -O executor-linux.tar.gz
 echo "Распаковка архива..."
 tar -xzvf executor-linux.tar.gz
 cd executor || exit 1
